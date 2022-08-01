@@ -7,6 +7,7 @@ import { ProductsComponent } from './products.component';
 import { ProductComponent } from './product/product.component';
 import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProductsService } from './products.service';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     CommonModule 
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

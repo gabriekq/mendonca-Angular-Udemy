@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ProductsService } from '../products.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ProductComponent implements OnInit {
 
    @Output() productClicked = new EventEmitter();
 
-  constructor() { 
+  constructor(private productsService: ProductsService) { 
     
   }
 
@@ -20,7 +21,8 @@ export class ProductComponent implements OnInit {
   }
 
   onClicked(){
-    this.productClicked.emit();
+   // this.productClicked.emit();
+   this.productsService.deleteProduct(this.productName);
   }
 
 }
